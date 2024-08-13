@@ -1,38 +1,45 @@
-# DIO - Trilha .NET - Fundamentos
+DESAFIO DE CÓDIGO - CRIANDO UM SISTEMA DE ESTACIONAMETO COM C#
 www.dio.me
 
-## Desafio de projeto
-Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de fundamentos, da trilha .NET da DIO.
+🎯 Desafio de Projeto
+Foram utilizados os conhecimentos adquiridos no módulo de fundamentos da trilha .NET da DIO para construir um sistema de gerenciamento de estacionamento. 🚗💨
 
-## Contexto
-Você foi contratado para construir um sistema para um estacionamento, que será usado para gerenciar os veículos estacionados e realizar suas operações, como por exemplo adicionar um veículo, remover um veículo (e exibir o valor cobrado durante o período) e listar os veículos.
+📜 Contexto
+O objetivo foi criar um sistema para gerenciar veículos estacionados, com operações como adicionar um veículo, remover um veículo e listar veículos. O sistema deve calcular o valor cobrado pelo estacionamento com base em uma tarifa inicial e uma tarifa por hora. 💵⏳
 
-## Proposta
-Você precisará construir uma classe chamada "Estacionamento", conforme o diagrama abaixo:
+🛠️ Proposta
+Construir uma classe chamada Estacionamento, conforme o diagrama de classe fornecido:
 ![Diagrama de classe estacionamento](diagrama_classe_estacionamento.png)
+A classe deve conter três variáveis:
+    - precoInicial: Tipo decimal. O preço cobrado para estacionar o veículo. 💲
+    - precoPorHora: Tipo decimal. O preço por hora que o veículo permanecer no estacionamento. ⏱️
+    - veiculos: Lista de string que armazena as placas dos veículos estacionados. 🚙
+A classe deve implementar três métodos:
+    - AdicionarVeiculo: Adiciona um veículo ao estacionamento a partir da placa digitada pelo usuário. 📝
+    - RemoverVeiculo: Remove um veículo do estacionamento após verificar sua existência e calcular o valor total baseado nas horas estacionadas. 🚫
+    - ListarVeiculos: Lista todos os veículos atualmente estacionados. Se não houver nenhum veículo, exibe a mensagem "Não há veículos estacionados". 📋
+Além disso, deve haver um menu interativo com as seguintes opções:
+    - Cadastrar veículo 🚗
+    - Remover veículo 🚫
+    - Listar veículos 📜
+    - Encerrar ❌
 
-A classe contém três variáveis, sendo:
+🛠️ Solução
+🔧 Código Base
+O código base inicial continha a implementação parcial dos métodos e a estrutura de um menu para o sistema de estacionamento. As principais funcionalidades estavam presentes, mas algumas melhorias eram necessárias para tornar o sistema amigável ao usuário.
 
-**precoInicial**: Tipo decimal. É o preço cobrado para deixar seu veículo estacionado.
+🚀 Melhorias Realizadas
+- Adição de Veículos:
+  1. Loop de Adição: Implementado um loop para permitir ao usuário adicionar vários veículos até que ele escolha parar. A validação garante que a placa não seja nula ou apenas espaços em branco. 🔄
+  2. Feedback ao Usuário: Mensagens de confirmação são exibidas após a adição de um veículo. 👍
+  Remoção de Veículos:
+  3. Loop de Remoção: Implementado um loop para permitir ao usuário remover vários veículos até que ele escolha parar. O código agora trata exceções de entrada para garantir que a quantidade de horas seja um número válido. 🔄
+  4. Verificação de Existência: Melhorada a verificação da existência do veículo, considerando a comparação de placas de forma insensível a maiúsculas e minúsculas. ✔️
 
-**precoPorHora**: Tipo decimal. É o preço por hora que o veículo permanecer estacionado.
-
-**veiculos**: É uma lista de string, representando uma coleção de veículos estacionados. Contém apenas a placa do veículo.
-
-A classe contém três métodos, sendo:
-
-**AdicionarVeiculo**: Método responsável por receber uma placa digitada pelo usuário e guardar na variável **veiculos**.
-
-**RemoverVeiculo**: Método responsável por verificar se um determinado veículo está estacionado, e caso positivo, irá pedir a quantidade de horas que ele permaneceu no estacionamento. Após isso, realiza o seguinte cálculo: **precoInicial** * **precoPorHora**, exibindo para o usuário.
-
-**ListarVeiculos**: Lista todos os veículos presentes atualmente no estacionamento. Caso não haja nenhum, exibir a mensagem "Não há veículos estacionados".
-
-Por último, deverá ser feito um menu interativo com as seguintes ações implementadas:
-1. Cadastrar veículo
-2. Remover veículo
-3. Listar veículos
-4. Encerrar
-
-
-## Solução
-O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+- Listagem de Veículos:
+  1. Limpeza de Tela: Adicionada limpeza da tela antes de listar os veículos para melhorar a legibilidade. 🧹
+  Verificação de Lista: Se não houver veículos, uma mensagem adequada é exibida ao usuário. 🚫
+  Menu Interativo:
+- Limpeza de Tela: Após cada operação, a tela é limpa para garantir que o menu seja exibido claramente e que o usuário veja apenas a informação relevante. 🧹
+  
+- Continuidade: Adicionada lógica para continuar com a operação de adicionar ou remover veículos até que o usuário decida parar. 🔄
